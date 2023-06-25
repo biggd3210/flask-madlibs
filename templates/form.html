@@ -1,20 +1,47 @@
-{%extends base.html%}
+{%extends 'base.html' %}
 
 {% block title%} Madlibs Form {%endblock%}
 
 {%block content %}
 
+<h1>Madlibs!</h1>
+
 <form class="madlibs_form" action="/story">
-    <label for="place">Place</label>
-    <input type="text" id="place" name="place">
-    <label for="noun"></label>
-    <input type="text" id="noun" name="noun">
-    <label for="verb"></label>
-    <input type="text" id="verb" name="verb">
-    <label for="adjective"></label>
-    <input type="text" id="adjective" name="adjective">
-    <label for="plural_noun"></label>
-    <input type="text" id="plural_noun" name="plural_noun">
-    <button>Read your story!</button>
+    {% for prompt in prompts %}
+
+        <div>
+            <label for="{{prompt}}">{{prompt}}</label>
+            <input type="{{text}}" id="{{prompt}}" name="{{prompt}}">
+        </div>
+    
+    {%endfor%}
+    
+    <button>Fill in your story!</button>
 
 </form>
+
+{%endblock%}
+
+<!-- <div>
+    <label for="place">Place:</label>
+    <input type="text" id="place" name="place">
+</div>
+<div>
+    <label for="noun">Noun:</label>
+    <input type="text" id="noun" name="noun">
+</div>
+<div>
+    <label for="verb">Verb:</label>
+    <input type="text" id="verb" name="verb">
+</div>
+<div>
+    <label for="adjective">Adjective:</label>
+    <input type="text" id="adjective" name="adjective">
+</div>
+<div>
+    <label for="plural_noun">Plural Noun:</label>
+    <input type="text" id="plural_noun" name="plural_noun">
+</div>
+<div>
+    <button>Read your story!</button>
+</div> -->

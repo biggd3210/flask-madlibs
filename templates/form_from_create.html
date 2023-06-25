@@ -1,0 +1,26 @@
+{%extends 'base.html' %}
+
+{% block title%} Madlibs Form {%endblock%}
+
+{%block content %}
+
+<h1>Madlibs!</h1>
+
+<form class="madlibs_form" action="/story_from_create">
+    {% for prompt in prompts %}
+
+        <div>
+            <label for="{{prompt}}">{{prompt}}</label>
+            <input type="{{text}}" id="{{prompt}}" name="{{prompt}}">
+        </div>
+    
+    {%endfor%}
+    
+    <input type="hidden" name="words" value="{{words}}">
+    <input type="hidden" name="text" value="{{text}}">
+
+    <button>Fill in your story!</button>
+
+</form>
+
+{%endblock%}

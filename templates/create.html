@@ -1,0 +1,24 @@
+{%extends 'base.html' %}
+
+{%block title %} Create your story! {%endblock%}
+
+{%block content%} 
+
+    <h2>Create your own story!</h2>
+    <form action="/form_from_create">
+        <!-- <div>
+            <p>Enter your story title.</p>
+            <input type="text" placeholder="title" name="title">
+        </div> -->
+        <div>
+            <p>Create a list of prompts. Separate each value with a comma. (a, b, c)</p>
+            <input type="text" placeholder="prompts" name="words">
+        </div>
+        <div>
+            <p>Create your template. Be sure to put each prompt from the previous section in a set of '{}'.</p>
+            <input type="text" placeholder="template" name="template">
+        </div>
+        <button>submit</button>
+    </form>
+
+{%endblock%}
